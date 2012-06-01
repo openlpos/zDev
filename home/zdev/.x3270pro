@@ -1,0 +1,13 @@
+! x3270 profile
+! File created Thu Jun  4 12:05:32 2009 by x3270 v3.3.4p4 Wed Dec  3 07:52:34 UTC 2008 abuild
+! This file overrides xrdb and .Xdefaults.
+! To skip reading this file, set NOX3270PRO in the environment.
+!
+! keypad state  (-keypad)
+x3270.keypadOn: false
+! emulator font  (-efont)
+x3270.emulatorFont: 3270gt8
+! model  (-model)
+x3270.model: 3
+! color scheme  (-scheme)
+x3270.colorScheme: default

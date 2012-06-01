@@ -1,0 +1,13 @@
+Generated File. Do not edit.
+
+[HEADER]
+Version:0.09:$
+
+[PLUGINS]
+/usr/lib/opensc-signer.so:$
+:$
+1236628650000:1:1:$
+This plugins handles web signatures using OpenSC smart card library.:$
+OpenSC Signer plugin:$
+1
+0:text/x-text-to-sign:Text to be signed:sgn:$

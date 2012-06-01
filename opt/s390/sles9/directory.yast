@@ -1,0 +1,8 @@
+initrd
+initrd.siz
+loader/
+parmfile
+rescue
+suse.ins
+tapeipl.ikr
+vmrdr.ikr

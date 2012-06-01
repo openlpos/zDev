@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=4815761c9040b548f98361c75090218a
+Comment=Hercules
+Exec=hercules -f /etc/hercules/hercules.cnf
+Terminal=false
+Type=Application

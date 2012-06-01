@@ -1,0 +1,51 @@
+control*Background:		#CCFAE9
+control*Foreground:		black
+
+menu*Background:		#104369
+menu*Foreground:		white
+Console*scrollBar:		true
+
+deskset.perfmeter*Background:	thistle4
+deskset.perfmeter.hasTitle:	True
+
+XTerm*Background:		#104369
+XTerm*Foreground:		#CCFAE9
+XTerm*saveLines:		8500
+XTerm*scrollBar:		true
+XTerm*title:			XTerm
+XTerm*cursorColor:      Red
+XTerm*fullCursor:       true
+
+Mwm*XConsole.clientDecoration:	+resizeh
+Mwm*perfmeter.clientDecoration:	+resizeh
+Mwm*control.clientDecoration:	+resizeh
+Mwm*XTerm*clientFunctions:	all
+Mwm*showFeedback:		resize placement move
+Mwm*keyboardFocusPolicy:	pointer
+Mwm*moveOpaque:			true
+Mwm*iconImageMaximum:		64x64
+Mwm*fadeNormalIcon:		true
+Mwm*interactivePlacement:	true
+Mwm*resizeBorderWidth:		3	
+Mwm*frameBorderWidth:		3
+Mwm*background:			#104369
+Mwm*activeBackground:		#CCFAE9
+Mwm*menu*background:		#104369
+Mwm*title*fontList:		-misc-fixed-*-*-*-*-12-*-*-*-*-*-*-*	
+Mwm*menu*font:		-misc-fixed-*-*-*-*-13-*-*-*-*-*-*-*
+Mwm*Panner*ClientPinned:	True
+! Focus policy
+!Mwm*keyboardFocusPolicy: explicit
+! Or
+Mwm*keyboardFocusPolicy: pointer
+! And select auto raise True or False
+Mwm*focusAutoRaise:      True
+!Mwm*focusAutoRaise:      False
+!Mwm*buttonBindings:DefaultButtonBindings
+!Mwm*fontList:		-adobe-courier-bold-r-normal--14-*
+!Mwm*menu*font:           -adobe-courier-bold-r-normal--14-*
+Mwm*useIconBox:     True
+Mwm*xclock*clientDecoration: border
+Mwm*wmbatt*clientDecoration: border
+Mwm*wmacpi*clientDecoration: border
+Mwm*iconImageMinimum:   48x48

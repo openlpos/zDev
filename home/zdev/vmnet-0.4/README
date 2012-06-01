@@ -1,0 +1,82 @@
+
+This is version 0.3 of VMnet, a simple little virtual networking program.
+
+See the file COPYING for GPL licensing details.
+
+This program has been written to implement virtual networking
+support for the Hercules S/390 simulator, but it is intentionally
+generic in its functionality, so any other virtual machine
+simulator/emulator program could potentially use it.
+
+The function is quite simple:
+The virtual machine simulator program starts VMnet and talks
+the SLIP protocol with it over stdin/out.
+VMnet sets up a SLIP connection on the host system, talking over a
+pseudo-tty to the VMnet program.
+Once things have been set up, VMnet simply copies the data streams
+between stdin/out and the SLIP psuedo-tty in both directions.
+Thus, the virtual machine has a direct SLIP connection with the host,
+without needing to worry about root privileges, pseudo-ttys, access
+rights, etc.
+
+
+To build:
+	make
+
+To install:
+	su
+	make install
+The default install is to /usr/local/bin/vmnet.
+Note that vmnet needs to be setuid root, so you really need to
+install as root.  Without root privileges, it can't start SLIP.
+
+
+Configuration:
+
+You will need to create a configuration file /etc/vmnet.conf
+with entries that look like
+	user	remote-ip	local-ip	command
+
+Each entry/line in the file represents a pair of IP addresses that
+a given user may use.
+Lines starting with "#" are ignored.
+
+The user field identifies the user by her login name.
+
+The remote-ip field contains the remote IP address, as seen from
+the SLIP connection on the host, i.e. the IP address of the
+virtual machine.
+
+The local-ip field contains the local IP address, as seen from
+the SLIP connection on the host.  You may have to specify this
+address as the "remote address" or "gateway" on the virtual
+machine.
+
+The command field gives a command to be executed when the SLIP
+interface is brought up or down.  The command should accept
+three arguments:  (up|down), remote-ip, local-ip.
+This can be used to perform any special actions, like routing,
+proxy-arp, etc, as needed.  You *must* specify a valid command
+here.  If you don't want anything done, "/bin/true" will do...
+
+
+
+Running vmnet:
+
+The user will normally not run the vmnet program manually, unless
+he wants to practice his skills at reading and typing SLIP packets.
+The intended usage is to have the virtual machine start vmnet
+at the appropriate time so it can connect the stdin/stdout of vmnet
+to its network device simulation.
+When VMnet is started, it expects one line of input, containing
+the remote-ip address to use, followed by SLIP traffic.
+VMnet does not produce any user-readable output on stdout.
+
+
+TODO:
+search for ifconfig, as does diald, rather than a #define'd path
+configurable netmask (now fixed at 255.255.255.255)
+configurable max mtu size (now fixed at 1500)
+a manual page, perhaps
+anything missing?
+

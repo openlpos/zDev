@@ -1,0 +1,13 @@
+06400480.spl
+08000600.spl
+10240768.spl
+12801024.spl
+14001050.spl
+16001200.spl
+bootlogo
+initrd
+isolinux.bin
+isolinux.cfg
+linux
+memtest
+message

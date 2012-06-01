@@ -1,0 +1,447 @@
+!!
+!! Root Menu Description
+!!
+
+Menu DefaultRootMenu
+{
+	"Z"		f.title
+	"New Xterm"		f.exec "xterm -e /bin/bash &"
+        "Hercules"		f.exec "xterm -r 'hercules -f /etc/hercules/hercules.cnf'"
+	"Firefox"		f.exec "firefox"
+	"Shuffle Up"		f.circle_up
+	"Shuffle Down"		f.circle_down
+	"Refresh"		f.refresh
+	"Pack Icons"		f.pack_icons
+	"Toggle Behavior..."	f.set_behavior
+	 no-label		f.separator
+	"Restart..."		f.restart
+	"Quit..."		f.quit_mwm
+}
+
+!!
+!! Default Window Menu
+!!
+Menu DefaultWindowMenu
+{
+	Restore		_R	Alt<Key>F5	f.restore
+	Move		_M	Alt<Key>F7	f.move
+	Size		_S	Alt<Key>F8	f.resize
+	Minimize	_n	Alt<Key>F9	f.minimize
+	Maximize	_x	Alt<Key>F10	f.maximize
+	Raise		_L	Alt<Key>F2	f.raise
+	Lower		_L	Alt<Key>F3	f.lower
+	no-label				f.separator
+	Close		_C	Alt<Key>F4	f.kill
+}
+
+
+!!
+!! Default Key Bindings
+!!
+Keys DefaultKeyBindings
+{
+	Shift<Key>Escape	window|icon		f.post_wmenu
+	Alt<Key>space		window|icon		f.post_wmenu
+	Alt<Key>Tab		root|icon|window	f.next_key
+	Alt Shift<Key>Tab	root|icon|window	f.prev_key
+	Alt<Key>Escape		root|icon|window	f.circle_down
+	Alt Shift<Key>Escape	root|icon|window	f.circle_up
+	Alt Shift Ctrl<Key>exclam root|icon|window	f.set_behavior
+	Alt<Key>F6		window			f.next_key transient
+	Alt Shift<Key>F6	window			f.prev_key transient
+	Shift<Key>F10		icon			f.post_wmenu
+	Alt Shift<Key>Delete	root|icon|window	f.restart
+}
+
+!!
+!! Button Binding Description(s)
+!!
+!! These can be used anywhere
+!!
+Buttons DefaultButtonBindings
+{
+	<Btn1Down>	icon|frame	f.raise
+	<Btn3Down>	icon|frame	f.post_wmenu
+	<Btn3Down>	root		f.menu	DefaultRootMenu
+}
+ 
+!!
+!! These are some example bindings that you might use if your
+!! keyboardFocusPolicy is "explicit".  Note that to use these, you'll
+!! have to change the Mwm*buttonBindings resource in Mwm to
+!! ExplicitButtonBindings instead of DefaultButtonBindings.
+!!
+!!Buttons ExplicitButtonBindings
+!!{
+!!	<Btn3Down>	frame|icon	f.post_wmenu
+!!	<Btn1Up>	icon		f.restore
+!!	Alt<Btn1Down>	window|icon	f.lower
+!!	Alt<Btn2Down>	window|icon	f.resize
+!!	Alt<Btn3Down>	window|icon	f.move
+!!}
+!!
+!! These are some example bindings that you might use if your
+!! keyboardFocusPolicy is "pointer".  Note that to use these, you'll
+!! have to change the Mwm*buttonBindings resource in Mwm to
+!! PointerButtonBindings instead of DefaultButtonBindings.
+!!
+!!Buttons PointerButtonBindings
+!!{
+!!	<Btn1Down>	frame|icon	f.raise
+!!	<Btn3Down>	frame|icon	f.post_wmenu
+!!	<Btn3Down>	root		f.menu	DefaultRootMenu
+!!	<Btn1Down>	window		f.raise
+!!	<Btn1Up>	icon		f.restore
+!!	Alt<Btn1Down>	window|icon	f.lower
+!!	Alt<Btn2Down>	window|icon	f.resize
+!!	Alt<Btn3Down>	window|icon	f.move
+!!}
+
+!include-menu-defs
+# Automatically generated file. Do not edit (see /usr/share/doc/menu/html/index.html)
+
+Menu "/SUSE/Applications/Accessibility"
+{
+	"Accessibility"	f.title
+	"Xmag"	f.exec  "xmag &"
+}
+Menu "/SUSE/Applications/Data Management"
+{
+	"Data Management"	f.title
+	"HSQLDB Database Manager"	f.exec  "/usr/bin/hsqldb-databasemanager &"
+	"HSQLDB Database Manager (Swing)"	f.exec  "/usr/bin/hsqldb-databasemanagerswing &"
+	"HSQLDB Query Tool"	f.exec  "/usr/bin/hsqldb-querytool &"
+	"HSQLDB Transfer Tool"	f.exec  "/usr/bin/hsqldb-transfer &"
+	"OpenOffice.org Base"	f.exec  "/usr/bin/oobase &"
+}
+Menu "/SUSE/Applications/Editors"
+{
+	"Editors"	f.title
+	"GVIM"	f.exec  "/usr/bin/vim.gnome -g -f &"
+}
+Menu "/SUSE/Applications/Emulators"
+{
+	"Emulators"	f.title
+	"Qemu Launcher"	f.exec  "/usr/bin/qemu-launcher &"
+	"VirtualBox OSE"	f.exec  "/usr/bin/virtualbox &"
+}
+Menu "/SUSE/Applications/File Management"
+{
+	"File Management"	f.title
+	"Baobab"	f.exec  "/usr/bin/baobab &"
+	"File-Roller"	f.exec  "/usr/bin/file-roller &"
+	"GnomeBaker"	f.exec  "/usr/bin/gnomebaker &"
+	"GNOME Search Tool"	f.exec  "/usr/bin/gnome-search-tool &"
+	"Nautilus"	f.exec  "/usr/bin/nautilus &"
+	"Thunar"	f.exec  "/usr/bin/thunar &"
+	"Xfdesktop"	f.exec  "xfdesktop &"
+}
+Menu "/SUSE/Applications/Graphics"
+{
+	"Graphics"	f.title
+	"GNOME Screenshot Tool"	f.exec  "/usr/bin/gnome-panel-screenshot &"
+	"ImageMagick"	f.exec  "/usr/bin/display logo: &"
+	"Inkscape"	f.exec  "/usr/bin/inkscape &"
+	"OpenOffice.org Draw"	f.exec  "/usr/bin/oodraw &"
+	"The GIMP"	f.exec  "/usr/bin/gimp &"
+	"XSane"	f.exec  "/usr/bin/xsane &"
+	"X Window Snapshot"	f.exec  "xwd | xwud &"
+}
+Menu "/SUSE/Applications/Net/File Transfer"
+{
+	"File Transfer"	f.title
+	"BitTorrent Download Client"	f.exec  "/usr/bin/gnome-btdownload &"
+}
+Menu "/SUSE/Applications/Net"
+{
+	"Net"	f.title
+  "File Transfer" f.menu "/SUSE/Applications/Net/File Transfer"
+}
+Menu "/SUSE/Applications/Network/Communication"
+{
+	"Communication"	f.title
+	"grdesktop"	f.exec  "/usr/bin/grdesktop &"
+	"Mutt"	f.exec  "x-terminal-emulator  -T 'Mutt' -e sh -c '/usr/bin/mutt' &"
+	"Xbiff"	f.exec  "xbiff &"
+}
+Menu "/SUSE/Applications/Network/Monitoring"
+{
+	"Monitoring"	f.title
+	"WiFi Radar"	f.exec  "su-to-root -X -c /usr/sbin/wifi-radar &"
+	"Wireshark"	f.exec  "/usr/bin/wireshark &"
+	"wmnet"	f.exec  "/usr/bin/wmnet -l &"
+}
+Menu "/SUSE/Applications/Network/Web Browsing"
+{
+	"Web Browsing"	f.title
+	"Epiphany web browser (Gecko)"	f.exec  "/usr/bin/epiphany-gecko &"
+	"Iceweasel"	f.exec  "iceweasel &"
+	"Links 2"	f.exec  "/usr/bin/links2 -g &"
+	"Links 2 (text)"	f.exec  "x-terminal-emulator  -T 'Links 2 (text)' -e sh -c '/usr/bin/links2' &"
+}
+Menu "/SUSE/Applications/Network/Web News"
+{
+	"Web News"	f.title
+	"Liferea: Linux Feed Reader"	f.exec  "/usr/bin/liferea &"
+}
+Menu "/SUSE/Applications/Network"
+{
+	"Network"	f.title
+  "Communication" f.menu "/SUSE/Applications/Network/Communication"
+  "Monitoring" f.menu "/SUSE/Applications/Network/Monitoring"
+	"Pan"	f.exec  "/usr/bin/pan &"
+	"Telnet"	f.exec  "x-terminal-emulator  -T 'Telnet' -e sh -c '/usr/bin/telnet' &"
+	"w3m"	f.exec  "x-terminal-emulator  -T 'w3m' -e sh -c '/usr/bin/w3m /usr/share/doc/w3m/MANUAL.html' &"
+  "Web Browsing" f.menu "/SUSE/Applications/Network/Web Browsing"
+  "Web News" f.menu "/SUSE/Applications/Network/Web News"
+}
+Menu "/SUSE/Applications/Office"
+{
+	"Office"	f.title
+	"AbiWord Word Processor"	f.exec  "/usr/bin/abiword &"
+	"HPLIP Fax address book"	f.exec  "/usr/bin/hp-fab &"
+	"HPLIP Fax utility"	f.exec  "/usr/bin/hp-sendfax &"
+	"OpenOffice.org Calc"	f.exec  "/usr/bin/oocalc &"
+	"OpenOffice.org Impress"	f.exec  "/usr/bin/ooimpress &"
+}
+Menu "/SUSE/Applications/Programming"
+{
+	"Programming"	f.title
+	"BeanShell (text)"	f.exec  "x-terminal-emulator  -T 'BeanShell (text)' -e sh -c '/usr/bin/bsh' &"
+	"BeanShell (windowed)"	f.exec  "/usr/bin/xbsh &"
+	"ccmake"	f.exec  "x-terminal-emulator  -T 'ccmake' -e sh -c '/usr/bin/ccmake' &"
+	"GDB"	f.exec  "x-terminal-emulator  -T 'GDB' -e sh -c '/usr/bin/gdb' &"
+	"Python (v2.4)"	f.exec  "x-terminal-emulator  -T 'Python (v2.4)' -e sh -c '/usr/bin/python2.4' &"
+	"Python (v2.5)"	f.exec  "x-terminal-emulator  -T 'Python (v2.5)' -e sh -c '/usr/bin/python2.5' &"
+	"Tclsh8.4"	f.exec  "x-terminal-emulator  -T 'Tclsh8.4' -e sh -c '/usr/bin/tclsh8.4' &"
+}
+Menu "/SUSE/Applications/Science/Mathematics"
+{
+	"Mathematics"	f.title
+	"Bc"	f.exec  "x-terminal-emulator  -T 'Bc' -e sh -c '/usr/bin/bc' &"
+	"Dc"	f.exec  "x-terminal-emulator  -T 'Dc' -e sh -c '/usr/bin/dc' &"
+	"GCalcTool"	f.exec  "/usr/bin/gcalctool &"
+	"OpenOffice.org Math"	f.exec  "/usr/bin/oomath &"
+	"Xcalc"	f.exec  "xcalc &"
+}
+Menu "/SUSE/Applications/Science"
+{
+	"Science"	f.title
+  "Mathematics" f.menu "/SUSE/Applications/Science/Mathematics"
+}
+Menu "/SUSE/Applications/Shells"
+{
+	"Shells"	f.title
+	"Bash"	f.exec  "x-terminal-emulator  -T 'Bash' -e sh -c '/bin/bash --login' &"
+	"Sh"	f.exec  "x-terminal-emulator  -T 'Sh' -e sh -c '/bin/sh --login' &"
+	"tcsh"	f.exec  "x-terminal-emulator  -T 'tcsh' -e sh -c '/bin/tcsh' &"
+}
+Menu "/SUSE/Applications/Sound"
+{
+	"Sound"	f.title
+	"gmix (Gnome 2.0 Mixer)"	f.exec  "/usr/bin/gnome-volume-control &"
+	"gnome-cd (Gnome 2.0 CD Player)"	f.exec  "/usr/bin/gnome-cd &"
+	"grecord (GNOME 2.0 Recorder)"	f.exec  "/usr/bin/gnome-sound-recorder &"
+	"Sound Juicer"	f.exec  "/usr/bin/sound-juicer &"
+	"vumeter (Gnome 2.0 Volume Meter)"	f.exec  "/usr/bin/vumeter &"
+}
+Menu "/SUSE/Applications/System/Administration"
+{
+	"Administration"	f.title
+	"alsaconf"	f.exec  "x-terminal-emulator  -T 'alsaconf' -e sh -c 'su-to-root -p root -c /usr/sbin/alsaconf' &"
+	"Aptitude"	f.exec  "x-terminal-emulator  -T 'Aptitude' -e sh -c '/usr/bin/aptitude' &"
+	"SUSE Task selector"	f.exec  "x-terminal-emulator  -T 'SUSE Task selector' -e sh -c 'su-to-root -c tasksel' &"
+	"Editres"	f.exec  "editres &"
+	"Gnome Control Center"	f.exec  "/usr/bin/gnome-control-center &"
+	"GNOME partition editor"	f.exec  "su-to-root -X -c /usr/bin/gparted &"
+	"HPLIP File printing"	f.exec  "/usr/bin/hp-print &"
+	"TeXconfig"	f.exec  "x-terminal-emulator  -T 'TeXconfig' -e sh -c '/usr/bin/texconfig' &"
+	"Xclipboard"	f.exec  "xclipboard &"
+	"Xfce-setting-show"	f.exec  "xfce-setting-show &"
+	"Xfontsel"	f.exec  "xfontsel &"
+	"xfprint4"	f.exec  "xfprint4 &"
+	"XFrun4"	f.exec  "xfrun4 &"
+	"Xkill"	f.exec  "xkill &"
+	"Xrefresh"	f.exec  "xrefresh &"
+}
+Menu "/SUSE/Applications/System/Hardware"
+{
+	"Hardware"	f.title
+	"GNOME Floppy Formatter"	f.exec  "/usr/bin/gfloppy &"
+	"HPLIP Toolbox"	f.exec  "/usr/bin/hp-toolbox &"
+	"Xvidtune"	f.exec  "xvidtune &"
+}
+Menu "/SUSE/Applications/System/Monitoring"
+{
+	"Monitoring"	f.title
+	"GNOME Log Viewer"	f.exec  "/usr/bin/gnome-system-log &"
+	"Pstree"	f.exec  "x-terminal-emulator  -T 'Pstree' -e sh -c '/usr/bin/pstree.x11' &"
+	"Top"	f.exec  "x-terminal-emulator  -T 'Top' -e sh -c '/usr/bin/top' &"
+	"Wmacpi"	f.exec  "/usr/bin/wmacpi &"
+	"wmbattery"	f.exec  "wmbattery &"
+	"Xbattbar-acpi"	f.exec  "/usr/bin/xbattbar-acpi &"
+	"Xconsole"	f.exec  "xconsole -file /dev/xconsole &"
+	"Xev"	f.exec  "x-terminal-emulator -e xev &"
+	"Xload"	f.exec  "xload &"
+}
+Menu "/SUSE/Applications/System/Package Management"
+{
+	"Package Management"	f.title
+	"Synaptic Package Manager"	f.exec  "/usr/bin/su-to-root -X -c /usr/sbin/synaptic &"
+}
+Menu "/SUSE/Applications/System"
+{
+	"System"	f.title
+  "Administration" f.menu "/SUSE/Applications/System/Administration"
+	"GNOME CUPS Manager"	f.exec  "/usr/bin/gnome-cups-manager &"
+	"GNOME Network Tool"	f.exec  "/usr/bin/gnome-nettool &"
+	"GNOME system monitor"	f.exec  "/usr/bin/gnome-system-monitor &"
+  "Hardware" f.menu "/SUSE/Applications/System/Hardware"
+	"lm_batmon"	f.exec  "/usr/bin/lm_batmon &"
+	"lm_batmon(penguin)"	f.exec  "/usr/bin/lm_batmon_penguin &"
+  "Monitoring" f.menu "/SUSE/Applications/System/Monitoring"
+	"Network Admin"	f.exec  "/usr/bin/network-admin &"
+  "Package Management" f.menu "/SUSE/Applications/System/Package Management"
+	"PerlPanel"	f.exec  "/usr/bin/perlpanel &"
+	"Print Notification Icon"	f.exec  "/usr/bin/gnome-cups-icon &"
+	"reportbug"	f.exec  "x-terminal-emulator  -T 'reportbug' -e sh -c '/usr/bin/reportbug --exit-prompt' &"
+	"Services Admin"	f.exec  "/usr/bin/services-admin &"
+	"Shares Admin"	f.exec  "/usr/bin/shares-admin &"
+	"Time Admin"	f.exec  "/usr/bin/time-admin &"
+	"User accounts Admin"	f.exec  "/usr/bin/users-admin &"
+}
+Menu "/SUSE/Applications/Terminal Emulators"
+{
+	"Terminal Emulators"	f.title
+	"Gnome Terminal"	f.exec  "/usr/bin/gnome-terminal &"
+	"Terminal"	f.exec  "/usr/bin/xfce4-terminal &"
+	"Xfterm4"	f.exec  "x-terminal-emulator  -T 'Xfterm4' -e sh -c 'xfterm4' &"
+	"XTerm"	f.exec  "xterm &"
+	"X-Terminal as root (GKsu)"	f.exec  "/usr/bin/gksu -u root /usr/bin/x-terminal-emulator &"
+	"XTerm (Unicode)"	f.exec  "uxterm &"
+}
+Menu "/SUSE/Applications/Text"
+{
+	"Text"	f.title
+	"Character map"	f.exec  "/usr/bin/gucharmap &"
+	"Fortune"	f.exec  "sh -c 'while /usr/games/fortune | col -x | xmessage -center -buttons OK:1,Another:0 -default OK -file - ; do :; done' &"
+	"GNOME Dictionary"	f.exec  "/usr/bin/gnome-dictionary &"
+}
+Menu "/SUSE/Applications/Tools"
+{
+	"Tools"	f.title
+	"buici clock"	f.exec  "buici-clock &"
+	"GBackground"	f.exec  "/usr/bin/gbackground &"
+	"Gimmie"	f.exec  "/usr/bin/gimmie &"
+	"GTK+ 1.2 Theme Switch"	f.exec  "/usr/bin/switch &"
+	"GTK+ 2.0 Theme Switch"	f.exec  "/usr/bin/switch2 &"
+	"xcolors"	f.exec  "/usr/bin/xcolors &"
+}
+Menu "/SUSE/Applications/Viewers"
+{
+	"Viewers"	f.title
+	"Evince"	f.exec  "/usr/bin/evince &"
+	"Eye of GNOME"	f.exec  "/usr/bin/eog &"
+	"GQview"	f.exec  "/usr/bin/gqview &"
+	"gtkam"	f.exec  "/usr/bin/gtkam &"
+	"totem"	f.exec  "/usr/bin/totem &"
+	"Xditview"	f.exec  "xditview &"
+	"XDvi"	f.exec  "/usr/bin/xdvi &"
+}
+Menu "/SUSE/Applications"
+{
+	"Applications"	f.title
+  "Accessibility" f.menu "/SUSE/Applications/Accessibility"
+  "Data Management" f.menu "/SUSE/Applications/Data Management"
+  "Editors" f.menu "/SUSE/Applications/Editors"
+  "Emulators" f.menu "/SUSE/Applications/Emulators"
+  "File Management" f.menu "/SUSE/Applications/File Management"
+  "Graphics" f.menu "/SUSE/Applications/Graphics"
+  "Net" f.menu "/SUSE/Applications/Net"
+  "Network" f.menu "/SUSE/Applications/Network"
+  "Office" f.menu "/SUSE/Applications/Office"
+  "Programming" f.menu "/SUSE/Applications/Programming"
+  "Science" f.menu "/SUSE/Applications/Science"
+  "Shells" f.menu "/SUSE/Applications/Shells"
+  "Sound" f.menu "/SUSE/Applications/Sound"
+  "System" f.menu "/SUSE/Applications/System"
+  "Terminal Emulators" f.menu "/SUSE/Applications/Terminal Emulators"
+  "Text" f.menu "/SUSE/Applications/Text"
+  "Tools" f.menu "/SUSE/Applications/Tools"
+  "Viewers" f.menu "/SUSE/Applications/Viewers"
+}
+Menu "/SUSE/Games/Action"
+{
+	"Action"	f.title
+	"Epiphany"	f.exec  "/usr/games/epiphany-game &"
+}
+Menu "/SUSE/Games/Board"
+{
+	"Board"	f.title
+	"GnuChess"	f.exec  "x-terminal-emulator  -T 'GnuChess' -e sh -c '/usr/games/gnuchess' &"
+}
+Menu "/SUSE/Games/Toys"
+{
+	"Toys"	f.title
+	"Oclock"	f.exec  "oclock &"
+	"Xclock (analog)"	f.exec  "xclock -analog &"
+	"Xclock (digital)"	f.exec  "xclock -digital -update 1 &"
+	"Xeyes"	f.exec  "xeyes &"
+	"Xlogo"	f.exec  "xlogo &"
+}
+Menu "/SUSE/Games"
+{
+	"Games"	f.title
+  "Action" f.menu "/SUSE/Games/Action"
+  "Board" f.menu "/SUSE/Games/Board"
+  "Toys" f.menu "/SUSE/Games/Toys"
+}
+Menu "/SUSE/Help"
+{
+	"Help"	f.title
+	"Info"	f.exec  "x-terminal-emulator  -T 'Info' -e sh -c 'info' &"
+	"TeXdoctk"	f.exec  "/usr/bin/texdoctk &"
+	"Xfce4-about"	f.exec  "xfce4-about &"
+	"Xfhelp4"	f.exec  "xfhelp4 &"
+	"Xman"	f.exec  "xman &"
+	"yelp"	f.exec  "/usr/bin/yelp &"
+}
+Menu "/SUSE/Screen/Locking"
+{
+	"Locking"	f.title
+	"Lock Screen (XScreenSaver)"	f.exec  "/usr/bin/xscreensaver-command -lock &"
+	"Xflock4"	f.exec  "x-terminal-emulator  -T 'Xflock4' -e sh -c 'xflock4' &"
+}
+Menu "/SUSE/Screen/Root-window"
+{
+	"Root-window"	f.title
+	"Chameleon"	f.exec  "/usr/bin/chameleon &"
+	"ChBg"	f.exec  "/usr/bin/chbg &"
+}
+Menu "/SUSE/Screen/Saving"
+{
+	"Saving"	f.title
+	"Activate ScreenSaver (Next)"	f.exec  "/usr/bin/xscreensaver-command -next &"
+	"Activate ScreenSaver (Previous)"	f.exec  "/usr/bin/xscreensaver-command -prev &"
+	"Activate ScreenSaver (Random)"	f.exec  "/usr/bin/xscreensaver-command -activate &"
+	"Demo Screen Hacks"	f.exec  "/usr/bin/xscreensaver-command -demo &"
+	"Disable XScreenSaver"	f.exec  "/usr/bin/xscreensaver-command -exit &"
+	"Enable XScreenSaver"	f.exec  "/usr/bin/xscreensaver &"
+	"Reinitialize XScreenSaver"	f.exec  "/usr/bin/xscreensaver-command -restart &"
+	"ScreenSaver Preferences"	f.exec  "/usr/bin/xscreensaver-command -prefs &"
+}
+Menu "/SUSE/Screen"
+{
+	"Screen"	f.title
+  "Locking" f.menu "/SUSE/Screen/Locking"
+  "Root-window" f.menu "/SUSE/Screen/Root-window"
+  "Saving" f.menu "/SUSE/Screen/Saving"
+}
+Menu "/SUSE"
+{
+	"SUSE"	f.title
+  "Applications" f.menu "/SUSE/Applications"
+  "Games" f.menu "/SUSE/Games"
+  "Help" f.menu "/SUSE/Help"
+  "Screen" f.menu "/SUSE/Screen"
+}

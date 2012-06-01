@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Hercules
+hercules -f /etc/hercules/hercules.cnf &
+
